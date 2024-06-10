@@ -222,7 +222,7 @@ async function fetchWeather() {
   if (!location) {
     location = DEFAULT_LOCATION;
   }
-  const url = "https://api.openweathermap.org/data/2.5/onecall?lat=" + location.latitude + "&lon=" + location.longitude + "&exclude=minutely,hourly,alerts&units=imperial&lang=en&appid=" + WEATHER_API_KEY;
+  const url = "https://api.openweathermap.org/data/3.0/onecall?lat=" + location.latitude + "&lon=" + location.longitude + "&exclude=minutely,hourly,alerts&units=imperial&lang=en&appid=" + WEATHER_API_KEY;
   const address = await Location.reverseGeocode(location.latitude, location.longitude);
   const data = await fetchJson(url);
 
